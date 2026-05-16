@@ -32,3 +32,40 @@ Proses komputasi dilakukan melalui tahap-tahap berikut:
    ├── doc1.txt          # Dokumen teks bahasa Inggris 1
    ├── doc2.txt          # Dokumen teks bahasa Inggris 2
    └── ...
+2. Buka terminal atau Command Prompt, lalu arahkan posisi ke folder proyek ini menggunakan perintah cd. Contoh:
+   cd Documents/Aljabar_Linear/vsm
+
+3. Install library NLTK yang dibutuhkan dengan mengetik perintah:
+   pip install -r requirements.txt
+
+4. Jalankan program utama dengan memberikan argumen file daftar dokumen dan file query yang ingin diuji coba. Perintah eksekusinya:
+   python vsm.py base.txt query1.txt
+
+   *Catatan: Pengguna bisa mengganti "query1.txt" menjadi "query2.txt" atau "query3.txt" di terminal untuk mencoba variasi kata kunci pengujian lainnya.
+
+---
+
+## 3. Contoh Hasil Keluaran Program
+
+Setiap kali dijalankan, program akan otomatis membuat atau memperbarui tiga file hasil (output) di dalam folder:
+
+A. File index.txt (Inverted Index)
+Menampilkan daftar kata bersih yang ditemukan di seluruh dokumen, diikuti informasi nomor dokumen dan nilai bobot skornya (dibulatkan 1 angka desimal).
+Contoh isi:
+algebra: 1,0.2 2,0.2 5,0.2
+matrix: 1,0.7
+scienc: 1,0.7
+
+B. File weights.txt (Daftar Bobot Dokumen)
+Menampilkan daftar kata-kata yang ada di setiap dokumen lengkap beserta nilai bobot detail hasil hitungan dengan presisi 4 angka desimal.
+Contoh isi:
+doc1.txt: python, 0.6990 scienc, 0.6990 linear, 0.0969 model, 0.0969
+doc2.txt: retriev, 0.2218 phyton, 0.3979 linear, 0.0969 algebra, 0.2218
+
+C. File response.txt (Hasil Perangkingan)
+Baris pertama adalah jumlah total dokumen yang cocok dengan query (skor lebih dari 0.001). Baris berikutnya menampilkan nama file dokumen dan nilai kemiripannya, diurutkan secara otomatis dari peringkat tertinggi ke terendah.
+Contoh isi:
+3
+doc1.txt 0.5843
+doc5.txt 0.1224
+doc2.txt 0.0912
