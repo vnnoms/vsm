@@ -1,0 +1,3 @@
+doc1.txt: vector, 0.1761 model, 0.4771 assalammualaikum, 0.4771 asoy, 0.4771
+doc2.txt: jtk, 0.1761 acihuy, 0.4771 ini, 0.4771 inform, 0.1761 polban, 0.1761
+doc3.txt: jtk, 0.1761 vector, 0.1761 retriev, 0.6207 space, 0.4771 inform, 0.1761 doksli, 0.4771 polban, 0.2291
