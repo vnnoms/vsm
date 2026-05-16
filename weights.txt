@@ -1,5 +1,5 @@
-doc1.txt: assalammualaikum, 0.6990 model, 0.0969
-doc2.txt: polban, 0.3979 model, 0.0969 retriev, 0.2218
-doc3.txt: space, 0.2218 jtk, 0.6990 polban, 0.5177 retriev, 0.2886
-doc4.txt: hail, 0.6990 space, 0.2218 factor, 0.6990 model, 0.0969 peal, 0.6990 mari, 0.6990
-doc5.txt: space, 0.2218 indonesia, 0.6990 model, 0.0969 retriev, 0.2218
+doc1.txt: program, 0.2218 model, 0.0969 scienc, 0.6990 matrix, 0.6990 assalammualaikum, 0.6990 python, 0.6990 data, 0.6990 algebra, 0.2218 linear, 0.0969
+doc2.txt: phyton, 0.3979 polban, 0.3979 model, 0.0969 retriev, 0.2218 algebra, 0.2218 linear, 0.0969
+doc3.txt: program, 0.2218 space, 0.2218 phyton, 0.3979 polban, 0.5177 jtk, 0.6990 retriev, 0.2886
+doc4.txt: hail, 0.6990 program, 0.2218 space, 0.2218 model, 0.0969 factor, 0.6990 peal, 0.6990 mari, 0.6990 linear, 0.0969
+doc5.txt: space, 0.2218 indonesia, 0.6990 model, 0.0969 retriev, 0.2218 algebra, 0.2218 linear, 0.0969

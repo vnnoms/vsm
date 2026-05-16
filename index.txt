@@ -1,13 +1,21 @@
+algebra: 1,0.2 2,0.2 5,0.2
 assalammualaikum: 1,0.7
+data: 1,0.7
 factor: 4,0.7
 hail: 4,0.7
 indonesia: 5,0.7
 inform: 
 jtk: 3,0.7
+linear: 1,0.1 2,0.1 4,0.1 5,0.1
 mari: 4,0.7
+matrix: 1,0.7
 model: 1,0.1 2,0.1 4,0.1 5,0.1
 peal: 4,0.7
+phyton: 2,0.4 3,0.4
 polban: 2,0.4 3,0.5
+program: 1,0.2 3,0.2 4,0.2
+python: 1,0.7
 retriev: 2,0.2 3,0.3 5,0.2
+scienc: 1,0.7
 space: 3,0.2 4,0.2 5,0.2
 vector: 
