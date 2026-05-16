@@ -9,70 +9,6 @@ import math
 nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
 
-def main():
-    if len(sys.argv) < 3:
-        print("Error: Jalankan dengan format 'python vsm.py base.txt query.txt'")
-        return
-
-    filebasename = sys.argv[1]  
-    queryfilebasename = sys.argv[2]  
-    doclist = []
-    
-    try:
-        with open(filebasename, 'r') as file:
-            for baris in file:
-                docname = baris.strip() 
-                
-                if docname: 
-                    doclist.append(docname)
-                    
-        print("--- LOGIKA INPUT BERHASIL ---")
-        print("Isi list daftar_dokumen:", doclist)
-        print("File query:", queryfilebasename)
-
-    except FileNotFoundError:
-        print(f"Error: File '{filebasename}' tidak ditemukan di folder proyekmu.")
-        return
-    print("--- MEMULAI PERHITUNGAN MATEMATIKA VSM ---")
-    invertedidx, tfidfweight, idfterm = tfidf(doclist)
-    if invertedidx is None:
-        return
-    with open('index.txt', 'w') as fidx:
-        for term in sorted(invertedidx.keys()):
-            showlist = invertedidx[term]
-            weighttxtlist = []
-            for docname, weight in showlist:
-                no_doc = docname.replace('doc', '').replace('.txt', '')
-                weighttxtlist.append(f"{no_doc},{weight:.1f}")
-            
-            lineprint = " ".join(weighttxtlist)
-            fidx.write(f"{term}: {lineprint}\n")
-            
-    print("-> Berhasil membuat file: index.txt")
-    with open('weights.txt', 'w') as f_weights:
-        for docname in doclist:
-            f_weights.write(f"{docname}: ")
-            weighttermlist = []
-            for term, weight in tfidfweight[docname].items():
-                weighttermlist.append(f"{term}, {weight:.4f}")
-            f_weights.write(" ".join(weighttermlist) + "\n")
-            
-    print("-> Berhasil membuat file: weights.txt")
-
-    ranktotal = qevaluation(queryfilebasename, tfidfweight, idfterm)
-    
-    if ranktotal is not None:
-        with open('response.txt', 'w') as f_response:
-            f_response.write(f"{len(ranktotal)}\n")
-            for docname, score in ranktotal.items():
-                f_response.write(f"{docname} {score:.4f}\n")
-                
-        print("-> Berhasil membuat file: response.txt")
-        print("\n--- SEMUA PROSES SELESAI DENGAN SUKSES! ---")
-
-if __name__ == "__main__":
-    main()
-
 def preprocess(teks):
     lteks = teks.lower()
     words = word_tokenize(lteks)
@@ -178,3 +114,66 @@ def qevaluation(queryfilename, tfidfweight, idfterm):
     ranks = dict(sorted(scoresimilarity.items(), key=lambda item: item[1], reverse=True))
     return ranks
 
+def main():
+    if len(sys.argv) < 3:
+        print("Error: Jalankan dengan format 'python vsm.py base.txt query.txt'")
+        return
+
+    filebasename = sys.argv[1]  
+    queryfilebasename = sys.argv[2]  
+    doclist = []
+    
+    try:
+        with open(filebasename, 'r') as file:
+            for baris in file:
+                docname = baris.strip() 
+                
+                if docname: 
+                    doclist.append(docname)
+                    
+        print("--- LOGIKA INPUT BERHASIL ---")
+        print("Isi list daftar_dokumen:", doclist)
+        print("File query:", queryfilebasename)
+
+    except FileNotFoundError:
+        print(f"Error: File '{filebasename}' tidak ditemukan di folder proyekmu.")
+        return
+    print("--- MEMULAI PERHITUNGAN MATEMATIKA VSM ---")
+    invertedidx, tfidfweight, idfterm = tfidf(doclist)
+    if invertedidx is None:
+        return
+    with open('index.txt', 'w') as fidx:
+        for term in sorted(invertedidx.keys()):
+            showlist = invertedidx[term]
+            weighttxtlist = []
+            for docname, weight in showlist:
+                no_doc = docname.replace('doc', '').replace('.txt', '')
+                weighttxtlist.append(f"{no_doc},{weight:.1f}")
+            
+            lineprint = " ".join(weighttxtlist)
+            fidx.write(f"{term}: {lineprint}\n")
+            
+    print("-> Berhasil membuat file: index.txt")
+    with open('weights.txt', 'w') as f_weights:
+        for docname in doclist:
+            f_weights.write(f"{docname}: ")
+            weighttermlist = []
+            for term, weight in tfidfweight[docname].items():
+                weighttermlist.append(f"{term}, {weight:.4f}")
+            f_weights.write(" ".join(weighttermlist) + "\n")
+            
+    print("-> Berhasil membuat file: weights.txt")
+
+    ranktotal = qevaluation(queryfilebasename, tfidfweight, idfterm)
+    
+    if ranktotal is not None:
+        with open('response.txt', 'w') as f_response:
+            f_response.write(f"{len(ranktotal)}\n")
+            for docname, score in ranktotal.items():
+                f_response.write(f"{docname} {score:.4f}\n")
+                
+        print("-> Berhasil membuat file: response.txt")
+        print("\n--- SEMUA PROSES SELESAI DENGAN SUKSES! ---")
+
+if __name__ == "__main__":
+    main()
