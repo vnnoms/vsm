@@ -1,3 +1,5 @@
-doc1.txt: vector, 0.1761 model, 0.4771 assalammualaikum, 0.4771 asoy, 0.4771
-doc2.txt: jtk, 0.1761 acihuy, 0.4771 ini, 0.4771 inform, 0.1761 polban, 0.1761
-doc3.txt: jtk, 0.1761 vector, 0.1761 retriev, 0.6207 space, 0.4771 inform, 0.1761 doksli, 0.4771 polban, 0.2291
+doc1.txt: assalammualaikum, 0.6990 model, 0.0969
+doc2.txt: polban, 0.3979 model, 0.0969 retriev, 0.2218
+doc3.txt: space, 0.2218 jtk, 0.6990 polban, 0.5177 retriev, 0.2886
+doc4.txt: hail, 0.6990 space, 0.2218 factor, 0.6990 model, 0.0969 peal, 0.6990 mari, 0.6990
+doc5.txt: space, 0.2218 indonesia, 0.6990 model, 0.0969 retriev, 0.2218

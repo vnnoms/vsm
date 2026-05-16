@@ -1,1 +1,1 @@
-polban information vector model retrieval
+polban information vector model retrieval phyton information linear algebra 

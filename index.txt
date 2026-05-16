@@ -1,12 +1,13 @@
-acihuy: 2,0.5
-asoy: 1,0.5
-assalammualaikum: 1,0.5
-doksli: 3,0.5
-inform: 2,0.2 3,0.2
-ini: 2,0.5
-jtk: 2,0.2 3,0.2
-model: 1,0.5
-polban: 2,0.2 3,0.2
-retriev: 3,0.6
-space: 3,0.5
-vector: 1,0.2 3,0.2
+assalammualaikum: 1,0.7
+factor: 4,0.7
+hail: 4,0.7
+indonesia: 5,0.7
+inform: 
+jtk: 3,0.7
+mari: 4,0.7
+model: 1,0.1 2,0.1 4,0.1 5,0.1
+peal: 4,0.7
+polban: 2,0.4 3,0.5
+retriev: 2,0.2 3,0.3 5,0.2
+space: 3,0.2 4,0.2 5,0.2
+vector: 
